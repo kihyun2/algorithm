@@ -1,7 +1,6 @@
 N=int(input())
 inp=list()
 temp=list()
-# 입력 받기
 for i in range(N):
     temp.append(input().split())
     if 'push' in temp[i][0]:
@@ -12,7 +11,6 @@ del temp
 
 deq=[]
 for order in inp:
-    #print(que)
     if 'push_front' in order:
         if deq:
             deq.append(0)
