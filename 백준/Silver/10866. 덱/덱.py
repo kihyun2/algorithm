@@ -15,7 +15,11 @@ for order in inp:
     #print(que)
     if 'push_front' in order:
         if deq:
-            deq.insert(0,order[1])
+            deq.append(0)
+            ln=len(deq)-1
+            for i in range(ln):
+                deq[ln-i]=deq[ln-1-i]
+            deq[0]=order[1]
         else:
             deq.append(order[1])
     if 'push_back' in order:
