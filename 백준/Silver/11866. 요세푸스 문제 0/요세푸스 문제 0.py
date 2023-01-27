@@ -16,12 +16,5 @@ while True:
     if que.count(0)>=N:
         break
 
-print("<",end="")
-for i in result:
-    
-    if i == result[-1]:
-        print(i,end="")
-    else:
-        print(i,end=", ")
-
-print(">")
+result=list(map(str,result))
+print(f'<{", ".join(result)}>',end="")
