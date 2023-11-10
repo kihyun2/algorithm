@@ -5,10 +5,10 @@ for tc in range(1, T + 1):
     # 입력단
     N = int(input())
     farm = [[] for i in range(N)]
-    for y in range(N):
+    for row in range(N):
         tmp = input()
         for idx in range(N):
-            farm[y].append(int(tmp[idx]))
+            farm[row].append(int(tmp[idx]))
     
     # 사용할 변수 선언
     half = N//2
