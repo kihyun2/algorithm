@@ -1,30 +1,21 @@
-
 T = int(input())
-# 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
-for tc in range(1, T + 1):
-    # 입력단
+
+for tc in range(1, T+1):
     N = int(input())
-    farm = [[] for i in range(N)]
-    for row in range(N):
-        tmp = input()
-        for idx in range(N):
-            farm[row].append(int(tmp[idx]))
-    
-    # 사용할 변수 선언
-    half = N//2
-    result = 0
-    opposite = half
+    a = [list(map(int, input())) for _ in range(N)]
+    ans = 0  # output 변수
 
-    # 마름모 참조
-    for row in range(0,N):
-        
-        if row <= half:
-            result += sum(farm[row][half-row:half+row+1])
-        
-        if row > half:
-            opposite -= 1
-            result += sum(farm[row][half-opposite:half+opposite+1])
+    # s: 시작포인트, e: 끝포인트
+    s, e = N // 2, N // 2
+    for i in range(N):
+        for j in range(s, e+1):
+            ans += a[i][j]
+        # 행의 인덱스가 mid 전까지는 s-e 간격 늘리고 mid 이후로는 간격 줄임
+        if i < N // 2:
+            s -= 1
+            e += 1
+        else:
+            s += 1
+            e -= 1
 
-    
-    print(f"#{tc} {result}")
-
+    print("#{} {}".format(tc, ans))
