@@ -12,11 +12,11 @@ for tc in range(1, T + 1):
     
     # 사용할 변수 선언
     half = N//2
-    result = farm[0][half]
+    result = 0
     opposite = half
 
     # 마름모 참조
-    for row in range(1,N):
+    for row in range(0,N):
         
         if row <= half:
             result += sum(farm[row][half-row:half+row+1])
