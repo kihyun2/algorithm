@@ -5,32 +5,30 @@ for tc in range(1, T+1):
     puzzle = [list(map(int, input().split())) for _ in range(N)]
     blank = []
 
-    #가로 카운트
+    # 가로 카운트
     for row in puzzle:
-        tmp = 0
-        cnt = 1
+        cnt = 0
         for ele in row:
-            if ele and tmp:
+            if ele == 1:
                 cnt += 1
-            elif ele == 0 and tmp:
-                blank.append(cnt)
-                cnt = 1
-            tmp = ele
+            else:
+                if cnt > 1:
+                    blank.append(cnt)
+                cnt = 0
         if cnt > 1:
             blank.append(cnt)
     
     #세로 카운트
     for col in range(N):
-        tmp = 0
-        cnt = 1
+        cnt = 0
         for row in range(N):
-            if puzzle[row][col] and tmp:
+            if puzzle[row][col] == 1:
                 cnt += 1
-            elif puzzle[row][col] == 0 and tmp:
-                blank.append(cnt)
-                cnt = 1
-            tmp = puzzle[row][col]
+            else:
+                if cnt > 1:
+                    blank.append(cnt)
+                cnt = 0
         if cnt > 1:
             blank.append(cnt)
-
+    
     print(f'#{tc} {blank.count(K)}')
