@@ -4,7 +4,7 @@ def dfs(n):
 
     global result
 
-    # 검문소에서 참만 걸려서 colCheck = [1,1,1,1]로 채우면 상으로 result ++ 해주고 내보냄
+    # 14번줄 체크 했을 때 퀸 놓을 자리 계속 나오면 n == N으로 만기전역 시켜줌
     if n == N:
         result += 1
         return
