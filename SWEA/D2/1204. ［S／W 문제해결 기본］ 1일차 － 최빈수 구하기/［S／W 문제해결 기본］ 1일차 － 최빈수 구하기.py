@@ -1,18 +1,19 @@
 T = int(input())
 
 for tc in range(1, T+1):
-    result = 0
-    q = input()
+    bindo = input()
     lst = list(map(int,input().split()))
-    q = [0 for _ in range(101)]
+    
+    # 어차피 안 쓰니까 재활용 개꿀
+    bindo = [0 for _ in range(101)]
+    
     for element in lst:
-        q[element] += 1
-    tmp = 0
-    for i in range(len(q)):
-        if tmp < q[i]:
-            tmp = q[i]
-            result = i
-        elif tmp == q[i]:
+        bindo[element] += 1
+    
+    score = 0
+    for i in range(len(bindo)):
+        if score <= bindo[i]:
+            score = bindo[i]
             result = i
 
 
