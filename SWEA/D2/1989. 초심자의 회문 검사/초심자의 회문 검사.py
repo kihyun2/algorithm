@@ -1,11 +1,13 @@
 T = int(input())
-# 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
-for test_case in range(1, T + 1):
-    # ///////////////////////////////////////////////////////////////////////////////////
+
+for tc in range(1, T+1):
     word = input()
-    word_back = word[::-1]
+    word_L = int((len(word)/2) + 0.5)
+    result = 1
+
+    j = -1
+    for i in range(word_L):
+        if word[i] != word[j-i]:
+            result = 0
     
-    if word == word_back:
-        print(f'#{test_case} 1')
-    else:
-        print(f'#{test_case} 0')
+    print(f'#{tc} {result}')
