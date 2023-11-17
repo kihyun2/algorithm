@@ -2,16 +2,10 @@ for tc in range(1,11):
     N = int(input())
     lst = list(map(int,input().split()))
 
-    avg = (min(lst)+max(lst)) // 2
-
+    # 100 * 100 * 1000 = 10^7    
     for _ in range(N):
-        mini = min(lst)
-        if mini != avg:
-            maxIndex = lst.index(max(lst))
-            minIndex = lst.index(mini)
-            lst[maxIndex] -= 1
-            lst[minIndex] += 1
-        else:
-            break
+        lst[lst.index(max(lst))] -= 1
+        lst[lst.index(min(lst))] += 1
+    
     result = lst[lst.index(max(lst))] - lst[lst.index(min(lst))]
     print(f'#{tc} {result}')
