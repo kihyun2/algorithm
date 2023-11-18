@@ -12,7 +12,7 @@ for tc in range(1, T+1):
         for j in range(N):
             if lst[j][i] == '1':
                 metOne = True
-            if metOne and lst[j][i] == '2':
+            if lst[j][i] == '2' and metOne:
                 deadlock += 1
                 metOne = False
     
