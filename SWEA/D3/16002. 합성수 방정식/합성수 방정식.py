@@ -4,7 +4,7 @@ for tc in range(1, T+1):
     result = 0
     N = int(input())
 
-    for y in range(N+1, (10**9)-(N+1)):
+    for y in range(2, (10**9)-(N+1)):
         bxy = 0
         x = y + N
         for i in range(2, int(y**0.5)+1):
