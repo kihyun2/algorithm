@@ -11,6 +11,8 @@ for tc in range(1, T+1):
             if y % i == 0:
                 bxy += 1
                 break
+        else:
+            continue
         for i in range(2, int(x**0.5)+1):
             if x % i == 0:
                 bxy += 1
