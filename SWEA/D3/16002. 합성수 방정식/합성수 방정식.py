@@ -1,7 +1,6 @@
 T = int(input())
 
 for tc in range(1, T+1):
-    result = 0
     N = int(input())
 
     for y in range(2, (10**9)-(N+1)):
@@ -18,9 +17,8 @@ for tc in range(1, T+1):
                 bxy += 1
                 break
         if bxy == 2:
-            result = x
             break
 
                 
 
-    print(f'#{tc} {result} {result-N}')
+    print(f'#{tc} {x} {x-N}')
